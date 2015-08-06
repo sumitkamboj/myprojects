@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+ 
+<struts-config>
+ 
+	<form-beans>
+	   <form-bean name="studentForm" type="student.detail.StudentForm"/>
+	   <form-bean name="studentData" type="student.detail.StudentData"/>
+	   <form-bean name="updateMarks" type="student.detail.UpdateStudent"/>
+	    <!-- <form-bean name="registeruser" type="com.mps.UserInformationAction"/> -->
+	</form-beans> 
+	<action-mappings>
+	   <action input="/index.jsp" path="/studentregister" type="student.Action.StudentDetailAction" scope="request" name="studentForm" >
+		<forward name="success" path="/detailsuccess.jsp"/>
+	   </action>
+	   <action path="/studentdata" type="student.Action.DisplayDetailAction" scope="request" name="studentForm" >
+		<forward name="success" path="/showmarks.jsp"/>
+	   </action>
+	    <action path="/getbyrollno" type="student.Action.StudentDataAction" scope="request" name="studentData" >
+		<forward name="success" path="/showmarks.jsp"/>
+	   </action>
+	    <action path="/updatemarks" type="student.Action.UpdateStudentAction" scope="request" name="updateMarks" >
+		<forward name="success" path="/showmarks.jsp"/>
+	   </action>
+	   
+	</action-mappings>
+  <message-resources
+		parameter="student.detail.StudentForm" /> 
+</struts-config>
