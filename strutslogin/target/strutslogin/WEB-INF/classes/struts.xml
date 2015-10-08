@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	 <constant name="struts.action.extension" value="html" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/> 
+	<constant name="struts.devMode" value="true" />
+    <package name="default" namespace="/" extends="struts-default">
+
+  <!--       <default-action-ref name="index" />
+
+        <action name="index" class="com.sumit.customer.IndexAction">
+            <result>/WEB-INF/jsp/index.jsp</result>
+        </action>
+
+        <action name="helloWorld" class="com.sumit.customer.HelloWorldAction">
+            <result name="input">/jsp/index.jsp</result>
+            <result>/WEB-INF/jsp/helloWorld.jsp</result>
+        </action> -->
+		<action name="addCustomerAction" class="customerAction" method="addCustomer">
+		<result name="success">pages/customer.jsp</result>
+		</action>
+		<action name="listCustomerAction" class="customerAction" method="listCustomer">
+		<result name="success">pages/customer.jsp</result>
+		</action>
+    </package>
+
+</struts>

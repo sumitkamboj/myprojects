@@ -1,5 +1,11 @@
 package com.customer.bo;
 
-public class CustomerBo {
-
+import java.util.List;
+import com.customer.model.Customer;
+ 
+public interface CustomerBo{
+	
+	void addCustomer(Customer customer);
+	List<Customer> listCustomer();
+	
 }
